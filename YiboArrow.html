@@ -17,6 +17,10 @@
 		</main>
 		<script>
 			let hail=(num => (num%2) ? 3*num+1 : num/2);
+			let seq =[147];
+			while (seq[seq.length-1] !=1){
+			      seq.push(hail(seq[seq.length-1]));
+			}
 		</script>
 	</body>
 </html>
