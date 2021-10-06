@@ -11,16 +11,31 @@
 				<li></li>
 			</ul>
 			
-			<p>
+			<p id='mainP'>
 				
 			</p>
 		</main>
 		<script>
-			let hail=(num => (num%2) ? 3*num+1 : num/2);
+			let hail=(num) => ((num%2) ? 3*num+1 : num/2);
 			let seq =[147];
 			while (seq[seq.length-1] !=1){
 			      seq.push(hail(seq[seq.length-1]));
 			}
+			//transform array type to String 
+			let numToString=seq.map(String);
+			let filt=(numToString.filter(x => x.endsWith(2))).map(Number);
+			
+			let dividingBySix= (num) => (num%6);
+			let mapSeq=seq.map(dividingBySix);
+			
+			console.log("filt:")
+			console.log(filt);
+			console.log("mapSeq:")
+			console.log(mapSeq);
+			window.onload=function(){
+				document.getElementById('mainP').innerHTML="There are"+" "+filt.length+" "+"that has the last digit a 2";
+			};
+			
 		</script>
 	</body>
 </html>
